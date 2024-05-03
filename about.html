@@ -56,33 +56,54 @@
 </head>
 <body class="font-sans">
         
-    <section class="py-4 px-4 sm:block sticky top-0 z-40 bg-white">
+    <section class="py-4 px-4 sm:block hidden sticky top-0 z-40 bg-white">
     <div class="max-w-7xl mx-auto flex justify-end">
-    <div class="sm:block hidden">
-       
+    <div class="sm:block hidden ">
+        <div class="flex space-x-2 text-gray-300 text-sm">
+            <a href="#"  class="cursor-pointer ">EN</a>
+            <div class="border-l border-gray-300"></div>
+            <a href="id.html"  class="cursor-pointer  text-simontini font-bold  ">ID</a>
+        </div>
     </div>
 </div>
     <div class=" max-w-7xl  mx-auto flex w-full justify-between mt-3">
-        <a href="id.html" class="text-simontini">
-            <img src="assets/rumahpetani_logo.png" alt="" class="h-8">
+        <a href="#" class="text-simontini">
+            <img src="assets/rumahpetani_logo.svg" alt="" class="h-8">
         </a>
         <div class="space-x-6 flex justify-end items-center text-simontini">
-
-            <div class="py-2 hover:border-b hover:border-simontini ">
-                <a href="id.html" class="text-simontini font-bold ">HOME</a>
+            <div class="py-2 hover:border-b hover:border-simontini">
+                <a href="id.html" class="font-normal ">HOME</a>
             </div>
-
+            <div class="py-2 hover:border-b hover:border-simontini">
+                <a href="about.html" class="text-2xl font-bold">ABOUT</a>
+            </div>
+            <div class="py-2 hover:border-b hover:border-simontini">
+                <a href="mapndata.html" class="font-normal ">MAP & DATA</a>
+            </div>
+            <div class="py-2 hover:border-b hover:border-simontini ">
+                <a href="insight.html" class="font-normal ">INSIGHT</a>
+            </div>
+            <div class="py-2 hover:border-b hover:border-simontini ">
+                <a href="mailto:rmh.petani@gmail.com" class="font-normal ">CONTACT</a>
+            </div>
         </div>
     </div>
 </section>
     <!--  -->
 <header class="bg-simontini sticky top-0 z-20">
-    <div x-data="{ open: false }" class="px-4 py-3 bg-black z-10 sm:hidden block">
+    <div x-data="{ open: false }" class="px-4 py-3 bg-auriga-biru z-10 sm:hidden block">
         <div class="flex justify-between items-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white " viewBox="0 0 20 20" fill="currentColor" @click="open = true">
                 <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
               </svg>
+
+              <div class="flex gap-2 z-50">
+                <a href="#"  class="cursor-pointer text-gray-700">EN</a>
+                <div class="border-l border-white"></div>
+                <a href="id.html"  class="cursor-pointer text-white font-bold">ID</a>
+            </div>
         </div>
+
 
         <div class="fixed w-3/4 h-screen z-50 bg-simontini inset-0 overflow-y-auto " x-show="open"
         x-transition:enter="transition-all transform ease-out"
@@ -100,27 +121,30 @@
             </button>
 
             <div class="mt-16 space-y-3">
-                <div class=" px-6">
-                    <a class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold "><a>
-                    
+                <div class="flex justify-center px-6">
+                    <img src="assets/rumahpetani_logo.svg" alt="Simontini" class=" h-8">   
                 </div>
-               
                 <div class=" px-6">
-                    <a href="about.html" class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">about<a>
+                    <a href=""   class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold "><a>
+                </div>
+                <div class=" px-6">
+                    <a href="id.html"   class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">home<a>
                     <p class="border-b border-gray-300"></p>
                 </div>
                 <div class=" px-6">
-                    <a href="mapndata.html" class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">map & data<a>
+                    <a href="about.html"  class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">about<a>
                     <p class="border-b border-gray-300"></p>
                 </div>
                 <div class=" px-6">
-                    <a href="insight.html" class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">insight<a>
+                    <a href="mapndata.html"  class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">map & data<a>
                     <p class="border-b border-gray-300"></p>
                 </div>
-             
-
                 <div class=" px-6">
-                    <a  href="mailto:rmh.petani@gmail.com" class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">contact<a>
+                    <a  href="insight.html" class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">insight<a>
+                    <p class="border-b border-gray-300"></p>
+                </div>
+                <div class=" px-6">
+                    <a   class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">contact<a>
                     <p class="border-b border-gray-300"></p>
                 </div>
             </div>
@@ -132,42 +156,54 @@
             <a></a>
         </div>
     </div>
-  
+
+</header> 
     <div class="bg-insight sm:col-span-1">
         
-        <img src="assets/sunrise-.gif" alt="" class="w-full h-full object-cover z-20">
+        <IMG src="assets/sunrise3.png" alt="" class=" w-full h-full object-cover z-20">
         
-    </di>
+    </div>
     
-    <div class="bg-insight sm:py-20 py-10">
+
+    <div class="bg-insight sm:py-20 py-10 " >
         <div class="px-4 max-w-6xl mx-auto grid sm:grid-cols-5 grid-cols-1 sm:gap-10 gap-0">
             <div class="px-4 sm:col-span-2 col-span-1">             
                 <div class="text-simontini">
-                    <a  class="font-bold">Petani Kawasan Hutan</a> 
+                    <a  class="font-bold">Masyarakat Sekitar Hutan</a> 
+                </div>
+                    <div class=" mt-2 text-simontini">
+                    <a> Pengelolaan hutan merupakan hal yang sangat penting bagi kelestarian dan keberadaan Hutan, 
+                        salah satu program pengelolaan hutan berbasis masyarakat adalah hutan kemasyarakatan yang merupakan bagian dari skema perhutanan sosial, yang bertujuan untuk meningkatkan kesejahteraan masyarakat sekitar hutan.
+                    </a>
                 </div>
                 <div class=" mt-2 text-simontini">
-                    <a> Pengelolaan hutan merupakan hal yang sangat penting bagi kelestarian dan keberadaan Hutan. 
-                        Salah satu program pengelolaan hutan berbasis masyarakat adalah hutan kemasyarakatan yang merupakan bagian dari skema perhutanan sosial, yang bertujuan untuk meningkatkan kesejahteraan masyarakat sekitar hutan. Kami bekolaborasi bersama komunitas petani untuk dapat meningkatkan kemampuan lokal dan kemandirian masyarakat agar memperoleh manfaat yang adil dan optimal dari sumberdaya hutan.
+                    <a> Kami bekolaborasi bersama komunitas petani melalui berbagai kegiatan yang memungkinkan untuk dapat meningkatkan kemampuan lokal dan kemandirian masyarakat agar memperoleh manfaat yang adil dan optimal dari sumberdaya hutan.
                     </a>
                 </div>
             </div>
             <div class="mt-4 sm:col-span-3 col-span-1">
-                <img src="assets/planting.jpg" alt="" class="w-full sm:h-96 h-full object-cover z-20">
-            </div>
+                <img src="assets/planting.jpg" alt="" class="w-full sm:h-96 h-full shadow-simontini object-cover z-20">
+            </div>  
         </div>
     </div>
+   
 
     <div class="bg-insight sm:py-20 py-10">
         <div class="px-4 max-w-6xl mx-auto grid sm:grid-cols-5 grid-cols-1 sm:gap-10 gap-0">
-            <div class="mt-2 sm:col-span-3 col-span-1">
-                <img src="assets/mapping.png" alt="" class="w-full sm:h-96 h-full object-cover z-20">
+            <div class="sm:col-span-3 col-span-1">
+                <img src="assets/mapping.png" alt="" class="w-full sm:h-96 h-full shadow-simontini object-cover z-20">
             </div>
             <div class="px-4 sm:col-span-2 col-span-1">             
                 <div class="mt-4 text-simontini">
                     <a  class="font-bold">Pemetaan Partisipatif</a>
                 </div>
                 <div class=" mt-2 text-simontini">        
-                    <a> Kolaborasi yang baik di antara para pihak akan mampu menciptakan peta wilayah dengan proses yang efektif dan dengan sumber daya yang lebih efisien. Untuk itu kami berupaya mendorong komunitas petani untuk dapat berdaulat atas ruang melalui pemetaan partisipatif. Karena disusun bersama masyarakat setempat, peta-peta yang dihasilkan melalui proses yang inklusif akan memiliki tingkat penerimaan yang tinggi sehingga mampu menjadi media perencanaan pembangunan dan pemanfaatan sumber daya alam yang berkelanjutan. 
+                    <a> Kolaborasi yang baik di antara para pihak akan mampu menciptakan peta wilayah dengan proses yang efektif dan dengan sumber daya yang lebih efisien, 
+                        untuk itu kami berupaya mendorong komunitas petani untuk dapat berdaulat atas ruang melalui pemetaan partisipatif.</a>
+                </div>
+                <div class=" mt-2 text-simontini">        
+                    <a> Karena disusun bersama masyarakat setempat, 
+                        peta-peta yang dihasilkan melalui proses yang inklusif akan memiliki tingkat penerimaan yang tinggi sehingga mampu menjadi media perencanaan pembangunan dan pemanfaatan sumber daya alam yang berkelanjutan. 
                     </a>
                 </div>
             </div>
@@ -178,25 +214,31 @@
     <div class="bg-insight sm:py-20 py-10">
         <div class="px-4 max-w-6xl mx-auto grid sm:grid-cols-5 grid-cols-1 sm:gap-10 gap-0">
             <div class="px-4 sm:col-span-2 col-span-1">             
-                <div class=" mt-0 text-simontini">
+                <div class="text-simontini">
                     <a class="font-bold">Agroforestri</a>
                 </div>
                 <div class=" mt-2 text-simontini">         
-                    <a>Paradigma teknologi baru memungkinkan pengelolaan lahan secara regeneratif. Bersama komunitas petani kami mencoba menggabungkan pengetahuan lokal dengan kemajuan teknologi dari sektor pertanian dan kehutanan menjadi solusi khusus untuk agroforestri. 
+                    <a>Paradigma teknologi baru memungkinkan pengelolaan lahan secara regeneratif sebagai salah satu upaya untuk menghadapi dampak dari perubahan iklim 
+                        yang sangat berpengaruh terhadap hasil produksi pertanian saat ini.  
+                        
+                    </a>
+                </div>
+                <div class=" mt-2 text-simontini">         
+                    <a> Kami mencoba menggabungkan pengetahuan petani lokal dengan kemajuan teknologi dari sektor pertanian dan kehutanan menjadi solusi khusus untuk agroforestri. 
                         Dengan menggunakan pendekatan dan metode pertanian presisi berbasis area dan aset pohon digital ke dalam sistem produksi agroforestri.
                     </a>
                 </div>
             </div>
             <div class="mt-4 sm:col-span-3 col-span-1">
-                <img src="assets/sample.jpg.png" alt="" class="w-full sm:h-96 h-full object-cover z-20">
+                <img src="assets/sample.jpg.png" alt="" class="w-full sm:h-96 h-full shadow-simontini object-cover z-20">
             </div>
         </div>
     </div>
 
     <div class="bg-insight sm:py-20 py-10">
         <div class="px-4 max-w-6xl mx-auto grid sm:grid-cols-5 grid-cols-1 sm:gap-10 gap-0">
-            <div class="mt-2 sm:col-span-3 col-span-1">
-                <img src="assets/raflesia.png" alt="" class="w-full sm:h-96 h-full object-cover z-20">
+            <div class="sm:col-span-3 col-span-1">
+                <img src="assets/raflesia.png" alt="" class="w-full sm:h-96 h-full shadow-simontini object-cover z-20">
             </div>
             <div class="px-4 sm:col-span-2 col-span-1">             
                 <div class="mt-4 text-simontini">
@@ -204,8 +246,10 @@
                 </div>
                 <div class=" mt-2 text-simontini">        
                     <a> Upaya konservasi suatu ekosistem yang menjadi sumber daya bagi manusia bergantung kepada ketersediaan, distribusi, dan lokasi layanan ekosistem yang keberadaan datanya masih terbatas.
-                        Sebagai salah satu upayanya kami ikut terlibat bersama dengan komunitas petani, pihak akademisi, NGO dan instansi yang berwenang untuk melakukan suatu inisisasi tata kelola kawasan dalam Hutan Kemasyarakatan,  
-                        melalui strategi pendidikan lingkungan dan penerapan metode penelusuran cepat keanekaragaman hayati.
+                </div>
+                <div class=" mt-2 text-simontini">        
+                    <a> Sebagai salah satu upayanya kami ikut terlibat bersama dengan pihak akademisi, NGO dan instansi yang berwenang untuk melakukan suatu inisisasi tata kelola kawasan dalam Hutan Kemasyarakatan,  
+                        melalui strategi pendidikan lingkungan dan penerapan metode penelusuran cepat keanekaragaman hayati berbasis komunitas.
                     </a>
                 </div>
             </div>
@@ -216,18 +260,21 @@
     <div class="bg-insight sm:py-20 py-10">
         <div class="px-4 max-w-6xl mx-auto grid sm:grid-cols-5 grid-cols-1 sm:gap-10 gap-0">
             <div class="px-4 sm:col-span-2 col-span-1">             
-                <div class=" mt-0 text-simontini">
+                <div class="text-simontini">
                     <a class="font-bold">Deforestasi</a>
                 </div>
                 <div class=" mt-2 text-simontini">         
-                    <a>Telah menjadi ancaman yang cukup serius terhadap keberadaan hutan dan keanekaragaman hayati. 
-                        Saat ini teknologi digital telah menjadi bagian penting dalam kehidupan manusia, termasuk dalam sektor kehutanan. Kami memanfaatkan sistem pemantauan berbasis data spasial dan teknologi aplikasi mobile (peringatan deforestasi), 
-                        melalui skema kegiatan kolaborasi bersama dengan instansi yang berwenang, NGO dan masyarakat sekitar hutan untuk kegiatan pengawasan, perlindungan dan pengamanan hutan.
+                    <a>Saat ini telah menjadi ancaman yang cukup serius terhadap keberadaan hutan dan keanekaragaman hayati, diperlukan keterlibatan dari semua pihak untuk menghadapi masalah terkait deforestasi.
+                    </a>
+                </div>
+                <div class=" mt-2 text-simontini">         
+                    <a> Peran teknologi digital pun menjadi bagian yang penting dalam sektor kehutanan, untuk itu kami memanfaatkan sistem pemantauan berbasis data spasial dan teknologi aplikasi mobile (peringatan deforestasi terpadu)
+                        melalui skema kegiatan kolaborasi bersama dengan instansi yang berwenang, NGO dan masyarakat sekitar hutan dalam kegiatan pengawasan, perlindungan dan pengamanan hutan.
                     </a>
                 </div>
             </div>
             <div class="mt-4 sm:col-span-3 col-span-1">
-                <img src="assets/deforestasi2.png" alt="" class="w-full sm:h-96 h-full object-cover z-20">
+                <img src="assets/drone.jpg.png" alt="" class="w-full sm:h-96 h-full shadow-simontini object-cover z-20">
             </div>
         </div>
     </div>
@@ -235,10 +282,10 @@
     
     
 
-    <div class="bg-simontini">
+    <div class="bg-simontini flex justify-center">
         <div class="max-w-5xl mx-auto px-4 py-4 text-sm">
             <div class="border-b border-white sm:flex justify-center gap-12 py-4">
-                <a class="text-sm text-white font-light">#PETAni Adalah Penjaga Tatanan Negara Indonesia</a>
+                <a class="flex justify-center text-sm text-white font-light">#PETAni Adalah Penjaga Tatanan Negara Indonesia</a>
             </div>
             <div class=" flex justify-center gap-2 py-4 text-sm">
                 <a class="text-white font-light">@ 2024</a>

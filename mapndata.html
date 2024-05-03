@@ -56,33 +56,54 @@
 </head>
 <body class="font-sans">
         
-    <section class="py-4 px-4 sm:block sticky top-0 z-40 bg-white">
+    <section class="py-4 px-4 sm:block hidden sticky top-0 z-40 bg-white">
     <div class="max-w-7xl mx-auto flex justify-end">
-    <div class="sm:block hidden">
-       
+    <div class="sm:block hidden ">
+        <div class="flex space-x-2 text-gray-300 text-sm">
+            <a href="#"  class="cursor-pointer ">EN</a>
+            <div class="border-l border-gray-300"></div>
+            <a href="id.html"  class="cursor-pointer  text-simontini font-bold  ">ID</a>
+        </div>
     </div>
 </div>
     <div class=" max-w-7xl  mx-auto flex w-full justify-between mt-3">
-        <a href="id.html" class="text-simontini">
-            <img src="assets/rumahpetani_logo.png" alt="" class="h-8">
+        <a href="#" class="text-simontini">
+            <img src="assets/rumahpetani_logo.svg" alt="" class="h-8">
         </a>
         <div class="space-x-6 flex justify-end items-center text-simontini">
-
-            <div class="py-2 hover:border-b hover:border-simontini ">
-                <a href="id.html" class="text-simontini font-bold ">HOME</a>
+            <div class="py-2 hover:border-b hover:border-simontini">
+                <a href="id.html" class="font-normal ">HOME</a>
             </div>
-
+            <div class="py-2 hover:border-b hover:border-simontini">
+                <a href="about.html" class="font-normal ">ABOUT</a>
+            </div>
+            <div class="py-2 hover:border-b hover:border-simontini">
+                <a href="mapndata.html" class="text-2xl font-bold">MAP & DATA</a>
+            </div>
+            <div class="py-2 hover:border-b hover:border-simontini ">
+                <a href="insight.html" class="font-normal ">INSIGHT</a>
+            </div>
+            <div class="py-2 hover:border-b hover:border-simontini ">
+                <a href="mailto:rmh.petani@gmail.com" class="font-normal ">CONTACT</a>
+            </div>
         </div>
     </div>
 </section>
     <!--  -->
 <header class="bg-simontini sticky top-0 z-20">
-    <div x-data="{ open: false }" class="px-4 py-3 bg-black z-10 sm:hidden block">
+    <div x-data="{ open: false }" class="px-4 py-3 bg-auriga-biru z-10 sm:hidden block">
         <div class="flex justify-between items-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white " viewBox="0 0 20 20" fill="currentColor" @click="open = true">
                 <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
               </svg>
+
+              <div class="flex gap-2 z-50">
+                <a href="#"  class="cursor-pointer text-gray-700">EN</a>
+                <div class="border-l border-white"></div>
+                <a href="id.html"  class="cursor-pointer text-white font-bold">ID</a>
+            </div>
         </div>
+
 
         <div class="fixed w-3/4 h-screen z-50 bg-simontini inset-0 overflow-y-auto " x-show="open"
         x-transition:enter="transition-all transform ease-out"
@@ -100,25 +121,30 @@
             </button>
 
             <div class="mt-16 space-y-3">
-                <div class=" px-6">
-                    <a class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold "><a>
-                    
+                <div class="flex justify-center px-6">
+                    <img src="assets/rumahpetani_logo.svg" alt="Simontini" class=" h-8">   
                 </div>
-               
                 <div class=" px-6">
-                    <a href="about.html" class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">about<a>
+                    <a href=""   class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold "><a>
+                </div>
+                <div class=" px-6">
+                    <a href="id.html"   class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">home<a>
                     <p class="border-b border-gray-300"></p>
                 </div>
                 <div class=" px-6">
-                    <a  href="mapndata.html" class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">map & data<a>
+                    <a href="about.html"  class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">about<a>
                     <p class="border-b border-gray-300"></p>
                 </div>
                 <div class=" px-6">
-                    <a href="insight.html" class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">insight<a>
+                    <a href="mapndata.html"  class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">map & data<a>
                     <p class="border-b border-gray-300"></p>
                 </div>
                 <div class=" px-6">
-                    <a  href="mailto:rmh.petani@gmail.com" class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">contact<a>
+                    <a  href="insight.html" class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">insight<a>
+                    <p class="border-b border-gray-300"></p>
+                </div>
+                <div class=" px-6">
+                    <a   class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">contact<a>
                     <p class="border-b border-gray-300"></p>
                 </div>
             </div>
@@ -130,7 +156,6 @@
             <a></a>
         </div>
     </div>
-  
 
     
     <div class="bg-insight sm:py-20 py-10">
@@ -139,17 +164,15 @@
                 <img src="assets/maps.gif" alt="" class="w-full sm:h-96 h-full object-cover z-20">
             </div>
                         <div class="px-4 sm:col-span-3 col-span-1">             
+                
                 <div class="text-simontini">
-                    <a  class="text-xl font-bold">MAP & DATA</a> 
-                </div>
-                <div class=" mt-4 text-simontini">
                     <a> Berikut adalah visualisasi data dan informasi yang disajikan dalam bentuk peta interaktif. Beberapa fitur dalam peta tersebut masih pada tahap pengembangan, untuk informasi lebih detail anda dapat menghubungi kami melalui email.
                     </a>
                 </div>
                 <div class=" mt-4 text-simontini">
                     <ul class="list-disc  px-4">
-                        <li> <a target="_blank" href="https://rumah-petani.github.io/map-data/" class="underline"> Digital Agroforestry: Peta Informasi Lahan Petani Gapoktanhut Lestari Sejahtera, Kabupaten Tanggamus</li> 
-                        <li> <a target="_blank" href="mapndata.html"> Pantau Hutan: Monitoring Deforestasi Kawasan Hutan Provinsi Lampung</li>
+                        <li> <a target="_blank" href="https://rumah-petani.github.io/map-data/" class="underline"> Digital Agroforestry : Peta Informasi Lahan Petani Gapoktanhut Lestari Sejahtera</li> 
+                        <li> <a href="#"> Pantau Hutan : Monitoring Deforestasi Kawasan Hutan Provinsi Lampung</li>
                     </ul>
                 </div>   
                 
@@ -164,10 +187,10 @@
     </div>
 
     
-    <div class="bg-simontini">
+    <div class="bg-simontini flex justify-center">
         <div class="max-w-5xl mx-auto px-4 py-4 text-sm">
             <div class="border-b border-white sm:flex justify-center gap-12 py-4">
-                <a class="text-sm text-white font-light">#PETAni Adalah Penjaga Tatanan Negara Indonesia</a>
+                <a class="flex justify-center text-sm text-white font-light">#PETAni Adalah Penjaga Tatanan Negara Indonesia</a>
             </div>
             <div class=" flex justify-center gap-2 py-4 text-sm">
                 <a class="text-white font-light">@ 2024</a>
