@@ -53,6 +53,7 @@
     gtag('js', new Date());
     gtag('config', 'G-DNGJ48QE13');
     </script>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body class="font-sans">
         
@@ -78,13 +79,13 @@
                 <a href="about.html" class="font-normal ">ABOUT</a>
             </div>
             <div class="py-2 hover:border-b hover:border-simontini">
-                <a href="mapndata.html" class="text-2xl font-bold">MAP & DATA</a>
+                <a href="mapndata.html" class="font-normal ">MAP & DATA</a>
             </div>
             <div class="py-2 hover:border-b hover:border-simontini ">
-                <a href="insight.html" class="font-normal ">INSIGHT</a>
+                <a href="insight.html" class="font-normal">INSIGHT</a>
             </div>
             <div class="py-2 hover:border-b hover:border-simontini ">
-                <a href="contact.html" class="font-normal ">CONTACT</a>
+                <a href="contact.html" class="text-2xl font-bold ">CONTACT</a>
             </div>
         </div>
     </div>
@@ -144,7 +145,7 @@
                     <p class="border-b border-gray-300"></p>
                 </div>
                 <div class=" px-6">
-                    <a  href="contact.html" class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">contact<a>
+                    <a href="contact.html"  class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">contact<a>
                     <p class="border-b border-gray-300"></p>
                 </div>
             </div>
@@ -156,30 +157,34 @@
             <a></a>
         </div>
     </div>
+  
 
     
     <div class="bg-insight sm:py-20 py-10">
         <div class="px-4 max-w-6xl mx-auto grid sm:grid-cols-5 grid-cols-1 sm:gap-10 gap-0">
             <div class="mt-4 sm:col-span-2 col-span-1">
-                <img src="assets/maps.gif" alt="" class="w-full sm:h-96 h-full object-cover z-20">
+                <img src="assets/message.gif" alt="" class="w-full sm:h-96 h-full object-cover z-20">
             </div>
-                        <div class="px-4 sm:col-span-3 col-span-1">             
+                <div class="px-4 sm:col-span-3 col-span-1">             
                 
-                <div class="text-simontini">
-                    <a> Berikut adalah visualisasi data dan informasi yang disajikan dalam bentuk peta interaktif. Beberapa fitur dalam peta tersebut masih pada tahap pengembangan, untuk informasi lebih detail anda dapat menghubungi kami melalui email.
-                    </a>
+               
+                <div class="contact container mt-4">
+                    <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+                        <div class="contact-left-title text-simontini">
+                            <a> Jangan sungkan untuk berbagi segala ide dan gagasan anda kepada kami, tinggalkan pesan untuk mendapatkan informasi lebih lanjut mengenai </a><a class="font-bold">RUMAH PETAni </a><a>, Tim kami akan memberikan feedback melalui email balasan untuk menjangkau anda.</a>
+                            
+                        </div>
+                        <input type="hidden" name="access_key" value="57b10201-4bff-4d6b-9496-47b0fcff236d">
+                        <input type="text" name="name" placeholder="nama" class="contact-inputs" required>
+                        <input type="text" name="email" placeholder="email" class="contact-inputs" required>
+                        <textarea type="text" name="message" placeholder="tuliskan pesan anda..." class="contact-inputs" required></textarea>
+                        <button type="submit">submit <img src="assets/arrow_icon.png"></button>
+                    </form>
+                    
+                  
                 </div>
-                <div class=" mt-4 text-simontini">
-                    <ul class="list-disc  px-4">
-                        <li> <a target="_blank" href="https://rumah-petani.github.io/map-data/" class="underline"> Digital Agroforestry : Peta Informasi Lahan Petani Gapoktanhut Lestari Sejahtera</li> 
-                        <li> <a href="#"> Pantau Hutan : Monitoring Deforestasi Kawasan Hutan Provinsi Lampung</li>
-                    </ul>
-                </div>   
                 
-                <div class="sm:text-sm text-xs mt-4">
-                    <a>Sitasi: <br> RUMAH PETAni. 2024. [nama peta], diakses pada [DD/MM/YYYY] melalui tautan [LINK].</a>
-                </div>
-
+                
                 
             </div>
             
@@ -200,6 +205,7 @@
             </div>
         </div>
     </div>
+
 
   
     </body>
