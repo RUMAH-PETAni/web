@@ -11,6 +11,18 @@
     justify-content: left;
 }
 
+.hero1{
+    width: 100%;
+    height: 100vh;
+    background: url(images/swapeta1b.jpg);
+    background-size: cover;
+    position: relative;
+    padding: 0 5%;
+    display: flex;
+    align-items:start;
+    justify-content: left;
+}
+
 .content-hero{
     text-align: left;
     
@@ -47,25 +59,82 @@
     font-size: 20px;
 
 }
+.content-hero1{
+    text-align: left;
+    
+}
+.content-hero1 h1{
+    font-size: 125px;
+    font-style: italic;
+    color: #555;
+    font-weight: 800;
+    margin-top: 0px;
 
+    transition: 0.5s;
+}
+.content-hero1 h1:hover{
+    -webkit-text-stroke: 2px #000;
+    color: transparent;
+}
+.content-hero1 h2{
+    font-size: 30px;
+    font-style: italic;
+    color: #555;
+    font-weight: 800;
+    margin-top: -40px;
 
-@media (max-width:600px) {
+    transition: 0.5s;
+}
+.content-hero1 h2:hover{
+    -webkit-text-stroke: 0.5px #000;
+    color: transparent;
+}
+.content-hero1 h3{
+    font-style: italic;
+    color: #000;
+    margin-top: 350px;
+    font-size: 20px;
+
+}
+
+@media (max-width: 991px) {
     .hero{
-        widht:90vw
+        width: 100%;
+        height: 100vh;
+        background: url(images/sunrise_22.jpg);
+        background-size: cover;
+        position: relative;
+        padding: 0 5%;
+        display: flex;
+        align-items:start;
+        justify-content: left;
     }
+    
+    .hero1{
+        width: 100%;
+        height: 100vh;
+        background: url(images/swapeta1b.jpg);
+        background-size: cover;
+        position: relative;
+        padding: 0 5%;
+        display: flex;
+        align-items:start;
+        justify-content: left;
+    }
+  
     .content-hero h1{
-        font-size: 50px;
+        font-size: 55px;
         font-style: italic;
-        color: #fff;
+        color: #555;
         font-weight: 800;
         margin-top: 0px;
     
         transition: 0.5s;
     }
     .content-hero h2{
-        font-size: 11px;
+        font-size: 12px;
         font-style: italic;
-        color: #fff;
+        color: #555;
         font-weight: 800;
         margin-top: -20px;
         text-wrap: pretty ;
@@ -84,8 +153,135 @@
         margin-top: 25px;
         font-size: 16px;
     
-    }    
+    }  
+    .content-hero1 h1{
+        font-size: 55px;
+        font-style: italic;
+        color: #555;
+        font-weight: 800;
+        margin-top: 0px;
+    
+        transition: 0.5s;
+    }
+    .content-hero1 h2{
+        font-size: 12px;
+        font-style: italic;
+        color: #555;
+        font-weight: 800;
+        margin-top: -20px;
+        text-wrap: pretty ;
+        transition: 0.5s;
+    }
+    .content-hero1 h1:hover{
+        -webkit-text-stroke: 0.5px #000;
+        color: transparent;
+    }
+    .content-hero1 h2:hover{
+        -webkit-text-stroke: 0.5px #000;
+        color: transparent;
+    }  
+    .content-hero1 h3{
+        color: #000;
+        margin-top:25px;
+        font-size: 16px;
+    
+    }
 }
+
+
+@media (max-width:600px) {
+    .hero{
+        width: 100%;
+        height: 100vh;
+        background: url(images/sunrise_33.jpg);
+        background-size: cover;
+        position: relative;
+        padding: 0 5%;
+        display: flex;
+        align-items:start;
+        justify-content: left;
+    }
+    
+    .hero1{
+        width: 100%;
+        height: 100vh;
+        background: url(images/swapeta1c.jpg);
+        background-size: cover;
+        position: relative;
+        padding: 0 5%;
+        display: flex;
+        align-items:start;
+        justify-content: left;
+    }
+  
+    .content-hero h1{
+        font-size: 55px;
+        font-style: italic;
+        color: #555;
+        font-weight: 800;
+        margin-top: 0px;
+    
+        transition: 0.5s;
+    }
+    .content-hero h2{
+        font-size: 12px;
+        font-style: italic;
+        color: #555;
+        font-weight: 800;
+        margin-top: -20px;
+        text-wrap: pretty ;
+        transition: 0.5s;
+    }
+    .content-hero h1:hover{
+        -webkit-text-stroke: 0.5px #fff;
+        color: transparent;
+    }
+    .content-hero h2:hover{
+        -webkit-text-stroke: 0.5px #fff;
+        color: transparent;
+    }
+    .content-hero h3{
+        color: #000;
+        margin-top: 25px;
+        font-size: 16px;
+    
+    }  
+    .content-hero1 h1{
+        font-size: 50px;
+        font-style: italic;
+        color: #555;
+        font-weight: 800;
+        margin-top: 0px;
+    
+        transition: 0.5s;
+    }
+    .content-hero1 h2{
+        font-size: 12px;
+        font-style: italic;
+        color: #555;
+        font-weight: 800;
+        margin-top: -20px;
+        text-wrap: pretty ;
+        transition: 0.5s;
+    }
+    .content-hero1 h1:hover{
+        -webkit-text-stroke: 0.5px #000;
+        color: transparent;
+    }
+    .content-hero1 h2:hover{
+        -webkit-text-stroke: 0.5px #000;
+        color: transparent;
+    }  
+    .content-hero1 h3{
+        color: #000;
+        margin-top:25px;
+        font-size: 16px;
+    
+    }
+}
+
+
+
 
 .contact-container{
     height: 100vh;
