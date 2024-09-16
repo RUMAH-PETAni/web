@@ -54,12 +54,30 @@ body{
 .workflow:nth-child(8){
     animation-delay: 7s;
 }
+.workflow:nth-child(9){
+    animation-delay: 8s;
+}
+.workflow:nth-child(10){
+    animation-delay: 9s;
+}
+}
+.workflow:nth-child(11){
+    animation-delay: 10s;
+}
 
 
 .text-box{
    
     padding: 20px 30px;
     background: rgba(0, 0, 0, 0.3);
+    position: relative;
+    border-radius: 6px;
+    font-size: 15px;
+}
+.text-box2{
+   
+    padding: 20px 30px;
+    background: rgba(134, 134, 134, 0.3);
     position: relative;
     border-radius: 6px;
     font-size: 15px;
@@ -105,6 +123,10 @@ body{
 
 .text-box h2{
     font-weight: 600;
+}
+.text-box2 h2{
+    font-weight: 600;
+    
 }
 .text-box small{
     display: inline-block;
