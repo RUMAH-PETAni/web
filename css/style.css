@@ -494,35 +494,54 @@ input[type="radio"]{
     bottom: -25px;
 }
 
-.img-box2{
+.container-tr{
+    widht: 600px;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    align-items:start;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.gallery{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-box-tr1{
     width: 100px;
     height: 300px;
     margin: 10px;
     border-radius: 20px;
-    background: url(images/TR1_LOGO.svg);
+    background: url(images/sugiri.png);
     background-size: cover;
     background-position: center;
     position: relative;
     transition: width 0.5s;
-    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
-                -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
     
 }
-.img-box2:nth-child(2){
-    background: url(images/TR2_LOGO.svg);
+.img-box-tr1:nth-child(2){
+    background: url(images/1.svg);
     background-size: cover;
     background-position: center;
 }
-.img-box2:nth-child(3){
-    background: url(images/TR3_LOGO.svg);
+.img-box-tr1:nth-child(3){
+    background: url(images/3.svg);
+    background-size: cover;
+    background-position: center;
+}
+.img-box-tr1:nth-child(4){
+    background: url(images/bondan.png);
     background-size: cover;
     background-position: center;
 }
 
-}
-.img-box2 h3{
+.img-box-tr1 h3{
    
     justify-content: center;
+
     color:#555;
     font-size: 18px;
     font-weight: bold;
@@ -532,11 +551,113 @@ input[type="radio"]{
     opacity: 0;
     transition: bottom 0.5s, opacity 0.5s;
 }
-.img-box2:hover{
+.img-box-tr1:hover{
     width: 300px;
     cursor: pointer;
 }
-.img-box2:hover h3{
+.img-box-tr1:hover h3{
+
+    opacity: 100;
+    bottom: -25px;
+}
+
+.img-box-tr2{
+    width: 100px;
+    height: 300px;
+    margin: 10px;
+    border-radius: 20px;
+    background: url(images/1.svg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    transition: width 0.5s;
+    
+}
+.img-box-tr2:nth-child(2){
+    background: url(images/2.svg);
+    background-size: cover;
+    background-position: center;
+}
+.img-box-tr2:nth-child(3){
+    background: url(images/3.svg);
+    background-size: cover;
+    background-position: center;
+}
+.img-box-tr2:nth-child(4){
+    background: url(images/bondan.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.img-box-tr2 h3{
+   
+    justify-content: center;
+
+    color:#555;
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    opacity: 0;
+    transition: bottom 0.5s, opacity 0.5s;
+}
+.img-box-tr2:hover{
+    width: 300px;
+    cursor: pointer;
+}
+.img-box-tr2:hover h3{
+
+    opacity: 100;
+    bottom: -25px;
+}
+
+.img-box-tr3{
+    width: 100px;
+    height: 300px;
+    margin: 10px;
+    border-radius: 20px;
+    background: url(images/1.svg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    transition: width 0.5s;
+    
+}
+.img-box-tr3:nth-child(2){
+    background: url(images/2.svg);
+    background-size: cover;
+    background-position: center;
+}
+.img-box-tr3:nth-child(3){
+    background: url(images/3.svg);
+    background-size: cover;
+    background-position: center;
+}
+.img-box-tr3:nth-child(4){
+    background: url(images/bondan.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.img-box-tr3 h3{
+   
+    justify-content: center;
+
+    color:#555;
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    opacity: 0;
+    transition: bottom 0.5s, opacity 0.5s;
+}
+.img-box-tr3:hover{
+    width: 300px;
+    cursor: pointer;
+}
+.img-box-tr3:hover h3{
 
     opacity: 100;
     bottom: -25px;
@@ -584,4 +705,105 @@ input[type="radio"]{
         bottom: -25px;
     }
   
+}
+@media screen and (max-width:600px) {
+    .container-tr{
+        widht: 90vw;
+    }
+    .gallery{
+        width: 90vw;
+    }
+   
+    .img-box-tr1{
+        width: 70px;
+        height: 200px;
+        margin: 5px;
+        border-radius: 20px;
+        background: url(images/sugiri.png);
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        transition: width 0.5s;
+ 
+    }
+    
+    .img-box-tr1 h3{
+        color:#555;
+        font-size: 12px;
+        font-weight: bold;
+        position: absolute;
+        bottom: 0;
+        left: 10px;
+        opacity: 0;
+        transition: bottom 0.5s, opacity 0.5s;
+    }
+    .img-box-tr1:hover{
+        width: 150px;
+        cursor: pointer;
+    }
+    .img-box-tr1:hover h3{
+        justify-content: center;
+        opacity: 1;
+        bottom: -25px;
+    }
+    .img-box-tr2{
+        width: 70px;
+        height: 200px;
+        margin: 5px;
+        border-radius: 20px;
+        background: url(images/1.svg);
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        transition: width 0.5s;
+    } 
+    .img-box-tr2 h3{
+        color:#555;
+        font-size: 12px;
+        font-weight: bold;
+        position: absolute;
+        bottom: 0;
+        left: 10px;
+        opacity: 0;
+        transition: bottom 0.5s, opacity 0.5s;
+    }
+    .img-box-tr2:hover{
+        width: 150px;
+        cursor: pointer;
+    }
+    .img-box-tr2:hover h3{
+        justify-content: center;
+        opacity: 1;
+        bottom: -25px;
+    }
+    .img-box-tr3{
+        width: 70px;
+        height: 200px;
+        margin: 5px;
+        border-radius: 20px;
+        background: url(images/1.svg);
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        transition: width 0.5s;
+    } 
+    .img-box-tr3 h3{
+        color:#555;
+        font-size: 12px;
+        font-weight: bold;
+        position: absolute;
+        bottom: 0;
+        left: 10px;
+        opacity: 0;
+        transition: bottom 0.5s, opacity 0.5s;
+    }
+    .img-box-tr3:hover{
+        width: 150px;
+        cursor: pointer;
+    }
+    .img-box-tr3:hover h3{
+        justify-content: center;
+        opacity: 1;
+        bottom: -25px;
+    }
 }
