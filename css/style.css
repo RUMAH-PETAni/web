@@ -617,7 +617,7 @@ input[type="radio"]{
     height: 300px;
     margin: 10px;
     border-radius: 20px;
-    background: url(images/1.svg);
+    background: url(images/rifai.png);
     background-size: cover;
     background-position: center;
     position: relative;
@@ -625,12 +625,12 @@ input[type="radio"]{
     
 }
 .img-box-tr3:nth-child(2){
-    background: url(images/2.svg);
+    background: url(images/ruslani.png);
     background-size: cover;
     background-position: center;
 }
 .img-box-tr3:nth-child(3){
-    background: url(images/3.svg);
+    background: url(images/sutrisno.png);
     background-size: cover;
     background-position: center;
 }
@@ -781,7 +781,7 @@ input[type="radio"]{
         height: 200px;
         margin: 5px;
         border-radius: 20px;
-        background: url(images/1.svg);
+        background: url(images/rifai.png);
         background-size: cover;
         background-position: center;
         position: relative;
