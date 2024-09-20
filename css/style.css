@@ -566,20 +566,21 @@ input[type="radio"]{
     height: 300px;
     margin: 10px;
     border-radius: 20px;
-    background: url(images/1.svg);
+    background: url(images/tusiman.png);
     background-size: cover;
     background-position: center;
     position: relative;
     transition: width 0.5s;
     
+    
 }
 .img-box-tr2:nth-child(2){
-    background: url(images/2.svg);
+    background: url(images/yusup.png);
     background-size: cover;
     background-position: center;
 }
 .img-box-tr2:nth-child(3){
-    background: url(images/3.svg);
+    background: url(images/basori.png);
     background-size: cover;
     background-position: center;
 }
