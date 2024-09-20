@@ -523,12 +523,12 @@ input[type="radio"]{
     
 }
 .img-box-tr1:nth-child(2){
-    background: url(images/1.svg);
+    background: url(images/budi.png);
     background-size: cover;
     background-position: center;
 }
 .img-box-tr1:nth-child(3){
-    background: url(images/3.svg);
+    background: url(images/warni.png);
     background-size: cover;
     background-position: center;
 }
