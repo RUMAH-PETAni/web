@@ -515,7 +515,7 @@ input[type="radio"]{
     height: 300px;
     margin: 10px;
     border-radius: 20px;
-    background: url(images/sugiri.png);
+    background: url(images/sugiri.webp);
     background-size: cover;
     background-position: center;
     position: relative;
@@ -523,17 +523,17 @@ input[type="radio"]{
     
 }
 .img-box-tr1:nth-child(2){
-    background: url(images/budi.png);
+    background: url(images/budi.webp);
     background-size: cover;
     background-position: center;
 }
 .img-box-tr1:nth-child(3){
-    background: url(images/warni.png);
+    background: url(images/warni.webp);
     background-size: cover;
     background-position: center;
 }
 .img-box-tr1:nth-child(4){
-    background: url(images/bondan.png);
+    background: url(images/bondan.webp);
     background-size: cover;
     background-position: center;
 }
@@ -566,7 +566,7 @@ input[type="radio"]{
     height: 300px;
     margin: 10px;
     border-radius: 20px;
-    background: url(images/tusiman.png);
+    background: url(images/tusiman.webp);
     background-size: cover;
     background-position: center;
     position: relative;
@@ -575,17 +575,17 @@ input[type="radio"]{
     
 }
 .img-box-tr2:nth-child(2){
-    background: url(images/yusup.png);
+    background: url(images/yusup.webp);
     background-size: cover;
     background-position: center;
 }
 .img-box-tr2:nth-child(3){
-    background: url(images/basori.png);
+    background: url(images/basori.webp);
     background-size: cover;
     background-position: center;
 }
 .img-box-tr2:nth-child(4){
-    background: url(images/bondan.png);
+    background: url(images/bondan.webp);
     background-size: cover;
     background-position: center;
 }
@@ -618,7 +618,7 @@ input[type="radio"]{
     height: 300px;
     margin: 10px;
     border-radius: 20px;
-    background: url(images/rifai.png);
+    background: url(images/rifai.webp);
     background-size: cover;
     background-position: center;
     position: relative;
@@ -626,17 +626,17 @@ input[type="radio"]{
     
 }
 .img-box-tr3:nth-child(2){
-    background: url(images/ruslani.png);
+    background: url(images/ruslani.webp);
     background-size: cover;
     background-position: center;
 }
 .img-box-tr3:nth-child(3){
-    background: url(images/sutrisno.png);
+    background: url(images/sutrisno.webp);
     background-size: cover;
     background-position: center;
 }
 .img-box-tr3:nth-child(4){
-    background: url(images/bondan.png);
+    background: url(images/bondan.webp);
     background-size: cover;
     background-position: center;
 }
@@ -720,7 +720,7 @@ input[type="radio"]{
         height: 200px;
         margin: 5px;
         border-radius: 20px;
-        background: url(images/sugiri.png);
+        background: url(images/sugiri.webp);
         background-size: cover;
         background-position: center;
         position: relative;
@@ -752,7 +752,7 @@ input[type="radio"]{
         height: 200px;
         margin: 5px;
         border-radius: 20px;
-        background: url(images/tusiman.png);
+        background: url(images/tusiman.webp);
         background-size: cover;
         background-position: center;
         position: relative;
@@ -782,7 +782,7 @@ input[type="radio"]{
         height: 200px;
         margin: 5px;
         border-radius: 20px;
-        background: url(images/rifai.png);
+        background: url(images/rifai.webp);
         background-size: cover;
         background-position: center;
         position: relative;
