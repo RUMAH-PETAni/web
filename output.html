@@ -55,6 +55,55 @@
     </script>
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/style2.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+		integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
+	<link rel="stylesheet" href="css//leaflet-sidepanel.css">
+
+<style>
+
+    #map {
+        
+
+        display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+        margin-bottom: 25px;
+        width: 100%;
+        height: 450px;
+        border: 1px solid #1f1412;
+        z-index: 1;
+        
+    }
+
+    @media all and (min-width: 1024px) {
+        #map {
+            height: 400px;
+            width: 1150px;
+        }
+    }
+
+    .sidepanel-content {
+        font-size: 1rem;
+    }
+
+    .sidepanel-content h4 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .sidepanel-content a {
+        text-decoration: none;
+        font-size: 1rem;
+        color: #199900;
+        transition: color 0.3s ease-in;
+    }
+
+    .sidepanel-content a:hover {
+        color: #116600;
+        text-decoration: underline;
+    }
+</style>
 
 </head>
 <body class="font-sans">
@@ -162,11 +211,7 @@
         </div>
     </div>
 </header>
-<div class="content-hero1">
-    <h1>#swaPETA</h1>
-    <h2>Survei Potensi &amp; Pemetaan Lahan Partisipatif</h2>
-        
-</div>
+
 <div class="bg-insight">
     <div class="max-w-5xl mx-auto px-4  flex gap-6 py-12 scrollbar-hide overflow-x-scroll snap-x snap-mandatory">
         <div class="bg-simontini2 relative w-56 h-60 sm:flex-shrink flex-shrink-0 snap-center rounded-lg py-0 px-4"> 
@@ -190,16 +235,292 @@
     </div>
 </div>
 
+<div class="content-hero2">
+    <div id="map">
+		
+		
+	</div>
+
+	<!-- Scripts -->
+	<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+		crossorigin=""></script>
+	<script src="js/leaflet-sidepanel.min.js"></script>
+    <script src="data/map_resort.js"></script>
+    <script src="data/FungsiKawasan_1.js"></script>
+	<script>
+		const map = L.map('map', {
+			zoomControl: false
+		}).setView([-5.35483, 104.479398], 10);
+		L.control.scale({
+			position: 'bottomleft',
+            imperial: false
+		}).addTo(map);
+		L.control.zoom({
+			position: 'topleft'
+		}).addTo(map);
+
+		
+
+		L.tileLayer('https://a.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}@2x.png', {
+			attribution: ""
+		}).addTo(map);
+
+        function style_FungsiKawasan_1_0(feature) {
+            switch(String(feature.properties['Kode'])) {
+                case 'HL':
+                    return {
+                
+                stroke: false, 
+                fill: true,
+                fillOpacity: 0.5,
+                fillColor: 'rgba(2,173,0,1.0)',
+                interactive: false,
+            }
+                    break;
+                case 'HP':
+                    return {
+                
+                stroke: false, 
+                fill: true,
+                fillOpacity: 0.5,
+                fillColor: 'rgba(255,255,0,1.0)',
+                interactive: false,
+            }
+                    break;
+                case 'HPT':
+                    return {
+                
+                stroke: false, 
+                fill: true,
+                fillOpacity: 0.5,
+                fillColor: 'rgba(138,242,0,1.0)',
+                interactive: false,
+            }
+                    break;
+                case 'KPA':
+                    return {
+                
+                stroke: false, 
+                fill: true,
+                fillOpacity: 0.5,
+                fillColor: 'rgba(173,63,255,1.0)',
+                interactive: false,
+            }
+                    break;
+            }
+        }
+        L.geoJSON(json_FungsiKawasan,{style:style_FungsiKawasan_1_0}).addTo(map);
+           
+
+    //     function mapstyle(feature) {
+	//     return{
+	// 	fillColor:"#fff",
+	//         color:"#444444",
+	//         weight:'2',
+	//         fillOpacity:0
+	// };
+    // }
+
+        L.geoJSON(resortjson,{onEachFeature: function(feature,layer)
+            {layer.bindPopup(feature.properties['Resort'])},
+            style: {fillColor:"#fff",
+                    color:"#444444",
+	                weight:'2',
+                    fillOpacity:0
+            }
+        }).addTo(map);
+
+    var swapetaIcon = L.icon({
+    iconUrl: "data/swapetaicon.svg",
+   
+
+    iconSize:     [30, 30], // size of the icon
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+    });
+	L.marker([-5.499801, 104.440814], {icon: swapetaIcon}).addTo(map)
+		.bindTooltip('GAPOKTANHUT LESTARI SEJAHTERA<br>SK.10098/MENLHK-PSKL/PKPS/PSL.0/12/2019');
+    L.marker([-5.479615, 104.436567], {icon: swapetaIcon}).addTo(map)
+		.bindTooltip('KTH TUMPAK REJO 1<br>SK.10761/MENLHK-PSKL/PKPS/PSL.0/9/2023');
+    L.marker([-5.476617, 104.43145], {icon: swapetaIcon}).addTo(map)
+		.bindTooltip('KTH TUMPAK REJO 2<br>SK.10541/MENLHK-PSKL/PKPS/PSL.0/9/2023');
+    L.marker([-5.477983, 104.440795], {icon: swapetaIcon}).addTo(map)
+		.bindTooltip('KTH TUMPAK REJO 3<br>SK.10539/MENLHK-PSKL/PKPS/PSL.0/9/2023');
+    L.marker([-5.447621, 104.691165], {icon: swapetaIcon}).addTo(map)
+		.bindTooltip('KTH BAKER LESTARI<br>Proses pengajuan izin');
+	
+    L.marker([-5.39541074304, 104.533604744]).addTo(map)
+    .bindTooltip('GAPOKTAN PALA MAKMUR<br>SK.2055/MENLHK-PSKL/PKPS/PSL.0/4/2017');
+    L.marker([-5.16667116485, 104.534243613]).addTo(map)
+    .bindTooltip('GAPOKTAN SINAR BARU<br>SK.2056/MENLHK-PSKL/PKPS/PSL.0/4/2017');
+    L.marker([-5.46223121709, 104.784127066]).addTo(map)
+    .bindTooltip('GAPOKTAN MANDIRI JAYA<br>SK.2057/MENLHK-PSKL/PKPS/PSL.0/4/2017');
+    L.marker([-5.56219213525, 104.862016676]).addTo(map)
+    .bindTooltip('GAPOKTAN KARYA MANDIRI<br>SK.2058/MENLHK-PSKL/PKPS/PSL.0/4/2017');
+    L.marker([-5.19259637849, 104.716130227]).addTo(map)
+    .bindTooltip('GAPOKTAN WANA TANI LESTARI<br>SK.2041/MENLHK-PSKL/PKPS/PSL.0/4/2017');
+    L.marker([-5.50253522092, 105.351194833]).addTo(map)
+    .bindTooltip('KTH HUTAN TUA<br>SK.2050/MENLHK-PSKL/PKPS/PSL.0/4/2017');
+    L.marker([-5.29743665946, 104.632074419]).addTo(map)
+    .bindTooltip('GAPOKTAN WANA  ARBA LESTARI<br>SK.3023/MENLHK-PSKL/PKPS/PSL.0/5/2017');
+    L.marker([-5.21368457306, 105.671900153]).addTo(map)
+    .bindTooltip('GAPOKTAN HKM SIDOMULYO<br>SK.3559/MENLHK-PSKL/PKPS/PSL.0/6/2017');
+    L.marker([-5.60865298207, 104.98334623]).addTo(map)
+    .bindTooltip('GAPOKTAN GUNUNG JAYA LESTARI<br>SK.4117/MENLHK-PSKL/PKPS/PSL.0/8/2017');
+    L.marker([-5.61992233684, 105.013464519]).addTo(map)
+    .bindTooltip('GAPOKTAN CITRA LESTARI<br>SK.4118/MENLHK-PSKL/PKPS/PSL.0/8/2017');
+    L.marker([-5.05171485058, 104.649464881]).addTo(map)
+    .bindTooltip('GAPOKTAN KARYA BARU<br>SK.6634/MENLHK-PSKL/PKPS/PSL.0/12/2017');
+    L.marker([-5.05742589803, 104.592146643]).addTo(map)
+    .bindTooltip('GAPOKTAN ARUM MAKMUR<br>SK.6633/MENLHK-PSKL/PKPS/PSL.0/12/2017');
+    L.marker([-5.55178519893, 104.901145355]).addTo(map)
+    .bindTooltip('GAPOKTAN TUNAS MEKAR<br>SK.6746/MENLHK-PSKL/PKPS/PSL.0/12/2017');
+    L.marker([-5.49847122343, 105.361032018]).addTo(map)
+    .bindTooltip('KTH BETUNG JAYA<br>SK.5759/MENLHK-PSKL/PKPS/PSL.0/10/2017');
+    L.marker([-5.20501028823, 104.808871617]).addTo(map)
+    .bindTooltip('GAPOKTAN SUMBER MAKMUR<br>SK.6920/MENLHK-PSKL/PKPS/PSL.0/12/2017');
+    L.marker([-5.61662000969, 105.426315459]).addTo(map)
+    .bindTooltip('KTH WAHANA LANCAR<br>SK.1220/MENLHK-PSKL/PKPS/PSL.0/3/2018');
+    L.marker([-5.13073685942, 104.853642987]).addTo(map)
+    .bindTooltip('KT KIPH WANA MAKMUR<br>SK.954/MENLHK-PSKL/PKPS/PSL.0/3/2018');
+    L.marker([-5.14753914237, 104.856913545]).addTo(map)
+    .bindTooltip('KT KASHURI INTEN AJI<br>SK.956/MENLHK-PSKL/PKPS/PSL.0/3/2018');
+    L.marker([-5.13308186899, 104.870515357]).addTo(map)
+    .bindTooltip('KT KIPH WANA LESTARI<br>SK.955/MENLHK-PSKL/PKPS/PSL.0/3/2018');
+    L.marker([-5.18567752564, 104.833791263]).addTo(map)
+    .bindTooltip('KT KASHURI WAN TEKAD MANDIRI<br>SK.953/MENLHK-PSKL/PKPS/PSL.0/3/2018');
+    L.marker([-5.52462260069, 105.375183785]).addTo(map)
+    .bindTooltip('KTH RANGAI SEJAHTERA<br>SK.2848/MENLHK-PSKL/PKPS/PSL.0/5/2018');
+    L.marker([-5.5167169396, 105.407219951]).addTo(map)
+    .bindTooltip('KTH LEMBAH HIJAU<br>SK.3172/MENLHK-PSKL/PKPS/PSL.0/5/2018');
+    L.marker([-4.98360422249, 104.500678789]).addTo(map)
+    .bindTooltip('GAPOKTAN SRIMULYA II<br>SK.3707/MENLHK-PSKL/PKPS/PSL.0/5/2018');
+    L.marker([-5.00825730656, 104.530007554]).addTo(map)
+    .bindTooltip('GAPOKTAN ABU MAKMUR<br>SK 4439/MENLHK-PSKL/PKPS/PSL.0/6/2018');
+    L.marker([-5.10096342653, 104.588929924]).addTo(map)
+    .bindTooltip('GAPOKTAN WANA MARTA<br>SK.4671/MENLHK-PSKL/PKPS/PSL.0/7/2018');
+    L.marker([-5.00112131291, 104.511802813]).addTo(map)
+    .bindTooltip('KTHKM MITRA MANDIRI TEBAT BUMI<br>SK.5910/MENLHK-PSKL/PKPS/PSL.0/9/2018');
+    L.marker([-4.90736100674, 104.333217022]).addTo(map)
+    .bindTooltip('KTHKM WANA SIDODADI LESTARI<br>SK.5957/MENLHK-PSKL/PKPS/PSL.0/9/2018');
+    L.marker([-5.35193762243, 104.649241099]).addTo(map)
+    .bindTooltip('GAPOKTANHUT RIMBA JAYA SEJAHTERA<br>SK.5917/MENLHK-PSKL/PKPS/PSL.0/9/2018');
+    L.marker([-5.09433679635, 104.77203996]).addTo(map)
+    .bindTooltip('GAPOKTAN SINAR HARAPAN JAYA<br>SK.5908/MENLHK-PSKL/PKPS/PSL.0/9/2018');
+    L.marker([-5.47199190259, 105.408203089]).addTo(map)
+    .bindTooltip('KTH SUBAN LESTARI<br>SK.7666/MENLHK-PSKL/PKPS/PSL.0/10/2018');
+    L.marker([-5.0995867008, 104.791034154]).addTo(map)
+    .bindTooltip('GAPOKTAN RIMBA JAYA<br>SK.5907/MENLHK-PSKL/PKPS/PSL.0/9/2018');
+    L.marker([-4.91573598752, 104.488937746]).addTo(map)
+    .bindTooltip('GAPOKTAN HKM TUNAS HARAPAN<br>SK.6174/MENLHK-PSKL/PKPS/PSL.0/9/2018');
+    L.marker([-5.5555240176, 104.927570251]).addTo(map)
+    .bindTooltip('GAPOKTAN MAKMUR LESTARI<br>SK.6186/MENLHK-PSKL/PKPS/PSL.0/9/2018');
+    L.marker([-5.50058425238, 105.343444105]).addTo(map)
+    .bindTooltip('GAPOKTAN HKM SRENGSEM<br>SK.5861/MENLHK-PSKL/PKPS/PSL.0/9/2018');
+    L.marker([-5.23217716321, 104.614101457]).addTo(map)
+    .bindTooltip('GAPOKTAN TRISNO WANA JAYA<br>SK.5423/MENLHK-PSKL/PKPS/PSL.0/8/2018');
+    L.marker([-5.13950318364, 104.878601511]).addTo(map)
+    .bindTooltip('GAPOKTAN KASHURI WANA  AGUNG<br>SK.6181/MENLHK-PSKL/PKPS/PSL.0/9/2018');
+    L.marker([-5.18909472594, 104.864298766]).addTo(map)
+    .bindTooltip('GAPOKTAN KASHURI KERIDO CAROKO<br>SK.6184/MENLHK-PSKL/PKPS/PSL.0/9/2018');
+    L.marker([-5.13472169331, 104.803601516]).addTo(map)
+    .bindTooltip('GAPOKTAN CURUP LESTARI<br>SK.5955/MENLHK-PSKL/PKPS/PSL.0/9/2018');
+    L.marker([-5.22097688802, 104.8799757]).addTo(map)
+    .bindTooltip('GAPOKTAN KASHURI MULYOREJO AGUNG<br>SK.6173/MENLHK-PSKL/PKPS/PSL.0/9/2018');
+    L.marker([-5.05523739493, 104.716503189]).addTo(map)
+    .bindTooltip('GAPOKTAN TANI JAYA<br>SK.5782/MENLHK-PSKL/PKPS/PSL.0/9/2018');
+    L.marker([-5.50348517183, 105.385467014]).addTo(map)
+    .bindTooltip('KTH BINA MULYA<br>SK.3547/MENLHK-PSKL/PKPS/PSL.0/5/2018');
+    L.marker([-4.97512590801, 104.53027712]).addTo(map)
+    .bindTooltip('GAPOKTAN CAHAYA TANI ABUNG BERSATU<br>SK.7836/MENLHK-PSKL/PKPS/PSL.0/10/2018');
+    L.marker([-5.49015751798, 105.404822788]).addTo(map)
+    .bindTooltip('KTH JAYA MAKMUR<br>SK.3171/MENLHK-PSKL/PKPS/PSL.0/5/2018');
+    L.marker([-5.52415090143, 105.393635074]).addTo(map)
+    .bindTooltip('KTH SINAR GUNUNG<br>SK.5857/MENLHK-PSKL/PKPS/PSL.0/10/2017');
+    L.marker([-5.36395655904, 104.555637228]).addTo(map)
+    .bindTooltip('GAPOKTAN RIMBA JAYA<br>SK.5442/MENLHK-PSKL/PKPS/PSL.0/6/2019');
+    L.marker([-5.43322008065, 104.603719383]).addTo(map)
+    .bindTooltip('GAPOKTANHUT BERKAT MUFAKAT<br>SK.5241/MENLHK-PSKL/PKPS/PSL.0/5/2019');
+    L.marker([-5.04212899731, 104.561126429]).addTo(map)
+    .bindTooltip('GAPOKTAN ABUNG SEJAHTERA<br>SK.2992/MENLHK-PSKL/PKPS/PSL.0/3/2019');
+    L.marker([-5.34066101553, 104.639065879]).addTo(map)
+    .bindTooltip('GAPOKTAN PANCA MARGA DATAR LEBAR<br>SK.5231/MENLHK-PSKL/PKPS/PSL.0/5/2019');
+    L.marker([-5.47664603229, 104.754076199]).addTo(map)
+    .bindTooltip('GAPOKTAN WIRA KARYA SEJAHTERA<br>SK.6558/MENLHK-PSKL/PKPS/PSL.0/7/2019');
+    L.marker([-5.25998381533, 105.595921204]).addTo(map)
+    .bindTooltip('GAPOKTAN TUNGGAL JAYA<br>SK.5445/MENLHK-PSKL/PKPS/PSL.0/6/2019');
+    L.marker([-5.4301309613, 104.249358984]).addTo(map)
+    .bindTooltip('KTH JAYA ABADI<br>SK.10123/MENLHK-PSKL/PKPS/PSL.0/12/2019');
+    L.marker([-5.42760265599, 104.240317806]).addTo(map)
+    .bindTooltip('KTH TATASAN LESTARI<br>SK.10038/MENLHK-PSKL/PKPS/PSL.0/12/2019');
+    L.marker([-5.41340413066, 104.255667592]).addTo(map)
+    .bindTooltip('KTH WANA JAYA LESTARI<br>SK.10117/MENLHK-PSKL/PKPS/PSL.0/12/2019');
+    L.marker([-5.44885493327, 104.245578824]).addTo(map)
+    .bindTooltip('KTH SINAR GROGOL<br>SK.10120/MENLHK-PSKL/PKPS/PSL.0/12/2019');
+    L.marker([-5.44118503442, 104.252200343]).addTo(map)
+    .bindTooltip('KTH PEMATANG LANGIT<br>SK.10032/MENLHK-PSKL/PKPS/PSL.0/12/2019');
+    L.marker([-5.58487379017, 104.864682016]).addTo(map)
+    .bindTooltip('GAPOKTAN BERSATU MAJU<br>SK.10036/MENLHK-PSKL/PKPS/PSL.0/12/2019');
+    L.marker([-4.81488455635, 104.405966273]).addTo(map)
+    .bindTooltip('GAPOKTAN HKM SELARAS<br>SK.10031/MENLHK-PSKL/PKPS/PSL.0/12/2019');
+    L.marker([-4.9407796949, 104.500672068]).addTo(map)
+    .bindTooltip('GAPOKTAN HKM REMAS<br>SK.10058/MENLHK-PSKL/PKPS/PSL.0/12/2019');
+    L.marker([-5.03777391701, 104.684609911]).addTo(map)
+    .bindTooltip('KTH KARYA MANDIRI<br>SK.10040/MENLHK-PSKL/PKPS/PSL.0/12/2019');
+    L.marker([-5.49371986589, 105.46294082]).addTo(map)
+    .bindTooltip('KTH WAY BUHA LESTARI<br>Proses pengajuan izin');
+    L.marker([-5.6889671892, 105.795474644]).addTo(map)
+    .bindTooltip('KTH PETA KAWAN<br>SK.4280/MENLHK-PSKL/PKPS/PSL.0/7/2020');
+
+    </script>
+        
+</div>
+
 <div class="bg-insight">
     <div class="max-w-6xl mx-auto">
         <ul class="accordion">
             <li>
                 <input type="radio" name="accordion" id="satu" checked>
-                <label for="satu">Kelompok Tani Hutan Tumpak Rejo 1</label>
+                <label for="satu">Gapoktanhut Lestari Sejahtera</label>
                 <div class="content">
                     <div class="mt-2 grid sm:grid-cols-5 grid-cols-1 sm:gap-10 gap-0">
                         <div class="mt-2 sm:col-span-3 col-span-1">
-                            <img src="assets/TR1.webp" alt="" class="w-full sm:h-96 h-full object-cover z-20">
+                            <img src="css/images/LS.gif" alt="" class="w-full sm:h-96 h-full object-cover z-20">
+                        </div>  
+                        <div class="sm:col-span-2 col-span-1">              
+                            <div class="mt-2 text-simontini font-bold"> 
+                                <a> Pemegang Persetujuan Pengelolaan Hutan Kemasyarakatan
+                                </a>    
+                            </div>
+                            <div class=" mt-4 text-simontini">
+                                <table border="2">
+                                    <tbody>
+                                    <tr><td>Nomor</td><td> &nbsp:&nbsp</td><td> SK.10098/MENLHK-PSKL/PKPS/PSL.0/12/2019
+                                    </td></tr>
+                                    <tr><td>Tanggal </td><td>&nbsp:&nbsp</td><td>16 Desember 2019</td></tr>
+                                    <tr><td>Lokasi </td><td> &nbsp:&nbsp</td><td> Desa Sedayu, Kecamatan Semaka, Kabupaten Tanggamus, Provinsi Lampung</td></tr>
+                                    <tr><td>UPTD </td><td>&nbsp:&nbsp</td><td> KPHL Kota Agung Utara</td></tr>
+                                    <tr><td>Fungsi</td><td>&nbsp:&nbsp</td><td> Hutan Lindung</td></tr>
+                                    <tr><td>KHL </td><td>&nbsp:&nbsp</td><td>Register 31 Pematang Arahan</td></tr>
+                                    <tr><td>DAS </td><td> &nbsp:&nbsp</td><td> Way Seputih - Way Sekampung</td></tr>
+                                    <tr><td>Luas </td><td>&nbsp:&nbsp</td><td> +/- 863 Ha</td></tr>
+                                </tbody></table> 
+                            </div>
+                            <div class="mt-4 text-simontini">
+                                <a href="pemeliharaan.html"  class="cursor-pointer underline font-bold">Database</a><span> | </span><a target="_blank" href="pemeliharaan.html"  class="cursor-pointer underline font-bold">Peta Interaktif</a>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>             
+            </li>
+            
+            <li>
+                <input type="radio" name="accordion" id="dua">
+                <label for="dua">Kelompok Tani Hutan Tumpak Rejo 1</label>
+                <div class="content">
+                    <div class="mt-2 grid sm:grid-cols-5 grid-cols-1 sm:gap-10 gap-0">
+                        <div class="mt-2 sm:col-span-3 col-span-1">
+                            <img src="css/images/TR1.gif" alt="" class="w-full sm:h-96 h-full object-cover z-20">
                         </div>  
                         <div class="sm:col-span-2 col-span-1">              
                             <div class="mt-2 text-simontini font-bold"> 
@@ -228,12 +549,12 @@
                 </div>             
             </li>
             <li>
-                <input type="radio" name="accordion" id="dua">
-                <label for="dua">Kelompok Tani Hutan Tumpak Rejo 2</label>
+                <input type="radio" name="accordion" id="tiga">
+                <label for="tiga">Kelompok Tani Hutan Tumpak Rejo 2</label>
                 <div class="content">
                     <div class="grid sm:grid-cols-5 grid-cols-1 sm:gap-10 gap-0">
                         <div class="mt-2 sm:col-span-3 col-span-1">
-                            <img src="assets/TR2.webp" alt="" class="w-full sm:h-96 h-full object-cover z-20">
+                            <img src="css/images/TR2.gif" alt="" class="w-full sm:h-96 h-full object-cover z-20">
                         </div>
                         <div class="mt-2 sm:col-span-2 col-span-1">             
                             <div class="mt-2 text-simontini font-bold"> 
@@ -262,12 +583,12 @@
                 </div>          
             </li>
             <li>
-                <input type="radio" name="accordion" id="tiga">
-                <label for="tiga">Kelompok Tani Hutan Tumpak Rejo 3</label>
+                <input type="radio" name="accordion" id="empat">
+                <label for="empat">Kelompok Tani Hutan Tumpak Rejo 3</label>
                 <div class="content">
                     <div class="grid sm:grid-cols-5 grid-cols-1 sm:gap-10 gap-0">
                         <div class="mt-2 sm:col-span-3 col-span-1">
-                            <img src="assets/TR3.webp" alt="" class="w-full sm:h-96 h-full object-cover z-20">
+                            <img src="css/images/TR3.gif" alt="" class="w-full sm:h-96 h-full object-cover z-20">
                         </div>
                         <div class="mt-2 sm:col-span-2 col-span-1">             
                             <div class="mt-2 text-simontini font-bold"> 
@@ -289,6 +610,40 @@
                             </div>
                             <div class="mt-4 text-simontini">
                                 <a href="database_tr3.html"  class="cursor-pointer underline font-bold">Database</a><span> | </span><a target="_blank" href="https://rumahpetani.nextgis.com/resource/16/display?base=basemap_0&lon=104.4404&lat=-5.4784&angle=0&zoom=16&styles=66,64,62,58,60"  class="cursor-pointer underline font-bold">Peta Interaktif</a>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>          
+            </li>
+            <li>
+                <input type="radio" name="accordion" id="lima">
+                <label for="lima">Kelompok Tani Hutan Baker Lestari</label>
+                <div class="content">
+                    <div class="grid sm:grid-cols-5 grid-cols-1 sm:gap-10 gap-0">
+                        <div class="mt-2 sm:col-span-3 col-span-1">
+                            <img src="css/images/BL.gif" alt="" class="w-full sm:h-96 h-full object-cover z-20">
+                        </div>
+                        <div class="mt-2 sm:col-span-2 col-span-1">             
+                            <div class="mt-2 text-simontini font-bold"> 
+                                <a> Pemegang Persetujuan Pengelolaan Hutan Kemasyarakatan
+                                </a>    
+                            </div>
+                            <div class=" mt-4 text-simontini">
+                                <table border="2">
+                                    <tbody>
+                                    <tr><td>Nomor</td><td> &nbsp:&nbsp</td><td> Proses pengajuan izin</td></tr>
+                                    <tr><td>Tanggal </td><td>&nbsp:&nbsp</td><td>&nbsp</td></tr>
+                                    <tr><td>Lokasi </td><td> &nbsp:&nbsp</td><td> Desa Batu Keramat, Kecamatan Kota Agung Timur, Kabupaten Tanggamus, Provinsi Lampung</td></tr>
+                                    <tr><td>UPTD </td><td>&nbsp:&nbsp</td><td> KPHL Kota Agung Utara</td></tr>
+                                    <tr><td>Fungsi</td><td>&nbsp:&nbsp</td><td> Hutan Lindung</td></tr>
+                                    <tr><td>KHL </td><td>&nbsp:&nbsp</td><td>Register 30 Gn. Tanggamus</td></tr>
+                                    <tr><td>DAS </td><td> &nbsp:&nbsp</td><td> Way Seputih - Way Sekampung</td></tr>
+                                    <tr><td>Luas </td><td>&nbsp:&nbsp</td><td> +/- 149,93 Ha</td></tr>
+                                </tbody></table> 
+                            </div>
+                            <div class="mt-4 text-simontini">
+                                <a href="pemeliharaan.html"  class="cursor-pointer underline font-bold">Database</a><span> | </span><a target="_blank" href="pemeliharaan.html"  class="cursor-pointer underline font-bold">Peta Interaktif</a>
                             </div>
                         </div>
                        
